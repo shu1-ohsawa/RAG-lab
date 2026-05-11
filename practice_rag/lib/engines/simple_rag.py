@@ -1,4 +1,7 @@
-# lib/engines/simple_rag.py
+"""
+simple_rag.py
+
+"""
 from pathlib import Path
 
 class SimpleRAGEngine:
@@ -20,7 +23,9 @@ class SimpleRAGEngine:
 
         # 3. 回答生成
         answer = self.llm.generate_answer(self.template, combined_context, user_input)
+        #print("[DEBUG]",answer,metadatas)
+        sources = []
+        if metadatas:
+            sources = [meta['source'] for meta in metadatas if meta is not None]
         
-        # 参照元情報も一緒に返す
-        sources = [meta['source'] for meta in metadatas]
         return answer, sources

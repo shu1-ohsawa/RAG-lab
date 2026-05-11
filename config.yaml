@@ -1,10 +1,10 @@
 llm:
-  model_name: "gemma2:2b"
+  model_name: "gemma4:e2b"
   temperature: 0.1
 
 embedding:
   model_name: "intfloat/multilingual-e5-small"
 
 paths:
-  db_path: "C:/git/****/chroma_db"
-  hf_cache: "C:/huggingface_cache"
+  db_path: "D:/git/practice-rag-project/chroma_db"
+  hf_cache: "D:/huggingface_cache"
